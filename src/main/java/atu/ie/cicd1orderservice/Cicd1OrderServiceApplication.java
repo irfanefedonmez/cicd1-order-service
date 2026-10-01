@@ -10,5 +10,6 @@ public class Cicd1OrderServiceApplication {
         SpringApplication.run(Cicd1OrderServiceApplication.class, args);
     }
 
+
 }
 
