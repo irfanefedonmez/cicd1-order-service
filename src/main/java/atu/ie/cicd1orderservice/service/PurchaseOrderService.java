@@ -1,16 +1,12 @@
+
 package atu.ie.cicd1orderservice.service;
 
-
-
 import atu.ie.cicd1orderservice.client.CatalogClient;
-
-
-
+import atu.ie.cicd1orderservice.client.dto.ProductResponse;
 import atu.ie.cicd1orderservice.model.PurchaseOrder;
 import atu.ie.cicd1orderservice.repository.PurchaseOrderRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -37,8 +33,8 @@ public class PurchaseOrderService {
         return this.repository.save(order);
     }
 
-    // Call Catalog Service to retrieve product details by ID.
-    public String testCatalogConnection(Long productId) {
+    // Retrieve product information from Catalog Service as a DTO.
+    public ProductResponse testCatalogConnection(Long productId) {
         return catalogClient.getProductById(productId);
     }
 }

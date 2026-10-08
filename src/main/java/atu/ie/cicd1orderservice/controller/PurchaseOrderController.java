@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import atu.ie.cicd1orderservice.client.dto.ProductResponse;
+
+
 
 import java.util.List;
 
@@ -30,9 +33,9 @@ public class PurchaseOrderController {
         return service.create(order);
     }
 
-    // Test the connection between Order and Catalog services.
+    // Test the Catalog connection and return the product as a DTO.
     @GetMapping("/test-catalog/{productId}")
-    public String testCatalogConnection(
+    public ProductResponse testCatalogConnection(
             @PathVariable Long productId) {
 
         return service.testCatalogConnection(productId);
